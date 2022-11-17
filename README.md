@@ -1,2 +1,1 @@
-# junk
-junk payloads for fuzzing
+Payloads for fuzzing, feel free to add yours 
