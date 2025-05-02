@@ -22,7 +22,8 @@ if [ -z "$LAST_IP" ] || [ "$CURRENT_IP" != "$LAST_IP" ]; then
     # Append the new IP with timestamp to the file
     echo "$CURRENT_IP - $TIMESTAMP" >> "$IP_FILE"
     
-    echo "New IP recorded: $CURRENT_IP"
+    echo "New IP recorded: $CURRENT_IP - $TIMESTAMP"
 else
-    echo "IP unchanged: $CURRENT_IP"
+    # No output if IP is unchanged to avoid filling logs
+    exit 0
 fi
