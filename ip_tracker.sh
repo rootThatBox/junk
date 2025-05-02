@@ -22,12 +22,7 @@ if [ -z "$LAST_IP" ] || [ "$CURRENT_IP" != "$LAST_IP" ]; then
     # Append the new IP with timestamp to the file
     echo "$CURRENT_IP - $TIMESTAMP" >> "$IP_FILE"
     
-    # Commit changes to GitHub
-    git add "$IP_FILE"
-    git commit -m "Update IP address on $TIMESTAMP"
-    git push origin main
-    
-    echo "New IP recorded and committed: $CURRENT_IP"
+    echo "New IP recorded: $CURRENT_IP"
 else
     echo "IP unchanged: $CURRENT_IP"
 fi
